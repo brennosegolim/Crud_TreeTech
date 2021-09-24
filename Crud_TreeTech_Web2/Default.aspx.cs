@@ -1,0 +1,23 @@
+﻿using Crud_TreeTech_Web2.Model;
+using Crud_TreeTech_Web2.Request;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Crud_TreeTech_Web2
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack) {
+                
+            }
+        }
+    }
+}
