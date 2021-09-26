@@ -14,6 +14,16 @@ namespace Crud_TreeTech_API.Facade
             return AlarmeBuilder.NovoAlarme().ListaTodos();
         }
 
+        public List<AlarmesDTO> ListarTodos(string coluna)
+        {
+            return AlarmeBuilder.NovoAlarme().ListaTodos(coluna);
+        }
+
+        public List<AlarmesDTO> ListarTodos(string coluna,string filtro)
+        {
+            return AlarmeBuilder.NovoAlarme().ListaTodos(coluna,filtro);
+        }
+
         public AlarmesDTO ListaUm(int idAlarme)
         {
             return AlarmeBuilder.NovoAlarme().comIdAlarme(idAlarme).ListaUm();

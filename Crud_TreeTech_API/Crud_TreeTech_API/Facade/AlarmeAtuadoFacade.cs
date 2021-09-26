@@ -54,5 +54,10 @@ namespace Crud_TreeTech_API.Facade
                 return "Erro durante o processo de remoção de alarme atuado";
             }
         }
+
+        public List<AlarmesAtuadosDTO> RankingAlarmes()
+        {
+            return AlarmeAtuadoBuilder.NovoAlarmeAtuado().RankinAlarmes();
+        }
     }
 }

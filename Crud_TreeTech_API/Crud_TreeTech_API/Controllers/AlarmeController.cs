@@ -20,6 +20,20 @@ namespace Crud_TreeTech_API.Controllers
         }
 
         [HttpGet]
+        [Route("ListarTodosOrdenado")]
+        public IActionResult ListaTodos(string coluna)
+        {
+            return Ok(new AlarmeFacade().ListarTodos(coluna));
+        }
+
+        [HttpGet]
+        [Route("ListarTodosPequisa")]
+        public IActionResult ListaTodos(string coluna,string filtro)
+        {
+            return Ok(new AlarmeFacade().ListarTodos(coluna,filtro));
+        }
+
+        [HttpGet]
         [Route("ListarUm")]
         public IActionResult ListaUm([FromQuery] int idAlarme)
         {

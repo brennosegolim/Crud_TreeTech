@@ -33,6 +33,7 @@ namespace Crud_TreeTech_Web2.Views
             string idTipoEquipamento = cbTipoEquipamento.SelectedValue;
 
             msgEsconder();
+            habilitarBotao(false);
 
             try
             {
@@ -89,6 +90,10 @@ namespace Crud_TreeTech_Web2.Views
             {
                 alerta("Problema ao adicionar/atualizar o registro!\n" + msg, ex.Message);
             }
+            finally
+            {
+                habilitarBotao(true);
+            }
         }
 
         protected void grdEquipamento_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -103,6 +108,7 @@ namespace Crud_TreeTech_Web2.Views
             int idEquipamento = Convert.ToInt32((sender as LinkButton).CommandArgument);
 
             msgEsconder();
+            habilitarBotao(false);
 
             try
             {
@@ -121,12 +127,17 @@ namespace Crud_TreeTech_Web2.Views
             {
                 alerta("Problema ao deletar o registro.", ex.Message);
             }
+            finally
+            {
+                habilitarBotao(true);
+            }
         }
 
         protected void btnAlterar_Click(object sender, EventArgs e)
         {
 
             msgEsconder();
+            habilitarBotao(false);
 
             try
             {
@@ -150,6 +161,10 @@ namespace Crud_TreeTech_Web2.Views
             catch (Exception ex)
             {
                 alerta("Problema ao carregar os registros!", ex.Message);
+            }
+            finally
+            {
+                habilitarBotao(true);
             }
         }
 
@@ -217,6 +232,7 @@ namespace Crud_TreeTech_Web2.Views
                 dvAlerta.InnerText = mensagem;
                 dvAlerta.Visible = true;
                 dvPanels.Visible = true;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "function", string.Format("esconderMsg();"), true);
             }
         }
 
@@ -228,6 +244,7 @@ namespace Crud_TreeTech_Web2.Views
                 dvAlerta.Visible = true;
                 dvPanels.Visible = true;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "consoleLog", string.Format("console.log('Erro: {0}')", erro), true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "function", string.Format("esconderMsg();"), true);
             }
         }
 
@@ -256,6 +273,11 @@ namespace Crud_TreeTech_Web2.Views
 
             dvAlerta.InnerText = "";
             dvSucesso.InnerText = "";
+        }
+
+        private void habilitarBotao(bool ativo)
+        {
+            btnConfirmar.Enabled = ativo;
         }
     }
 }

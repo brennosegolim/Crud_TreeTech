@@ -10,11 +10,22 @@ namespace Crud_TreeTech_Web2.Request
     {
         public string getAPIUrl()
         {
-            string url = string.Empty;
-            
-            url = ConfigurationManager.AppSettings["ApiUrl"];
+            return ConfigurationManager.AppSettings["ApiUrl"];
+        }
 
-            return url;
+        public string getEmailEnvioAlerta()
+        {
+            return ConfigurationManager.AppSettings["EmailDestinatarioAlerta"];
+        }
+
+        public string getRemetenteEmail()
+        {
+            return ConfigurationManager.AppSettings["EmailRemetenteAlerta"];
+        }
+
+        public string getSenhaRemetenteEmail()
+        {
+            return ConfigurationManager.AppSettings["SenhaRemetenteAlerta"];
         }
     }
 }

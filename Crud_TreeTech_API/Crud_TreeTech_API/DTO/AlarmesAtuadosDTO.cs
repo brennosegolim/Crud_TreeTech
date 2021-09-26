@@ -11,5 +11,6 @@ namespace Crud_TreeTech_API.DTO
         public DateTime DataEntrada { get; set; }
         public DateTime DataSaida { get; set; }
         public int IdAlarme { get; set; }
+        public int Quantidade { get; set; }
     }
 }

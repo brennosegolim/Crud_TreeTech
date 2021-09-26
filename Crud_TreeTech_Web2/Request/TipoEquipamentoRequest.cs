@@ -33,6 +33,7 @@ namespace Crud_TreeTech_Web2.Request
                         msgErro = "Não foi possível obter o tipo de equipamento : " + response.StatusCode;
                     }
                 }
+                client.Dispose();
             }
             return tipoEquipamentoModel;
         }
@@ -56,6 +57,7 @@ namespace Crud_TreeTech_Web2.Request
                         msgErro = "Não foi possível obter o tipo de equipamento : " + response.StatusCode;
                     }
                 }
+                client.Dispose();
             }
             return tipoEquipamentoModel;
         }

@@ -86,5 +86,10 @@ namespace Crud_TreeTech_API.Builder
         {
             return alarmeAtuadoDAO.Deletar(alarmesAtuados);
         }
+
+        public List<AlarmesAtuadosDTO> RankinAlarmes()
+        {
+            return alarmeAtuadoDAO.rankingAlarmes();
+        }
     }
 }

@@ -39,7 +39,7 @@
             <asp:BoundField DataField="NomeEquipamento" HeaderText="Nome" HeaderStyle-Width="500"/>
             <asp:BoundField DataField="NumeroSerie" HeaderText="Número de Série" HeaderStyle-Width="300"/>
             <asp:BoundField DataField="NomeTipoEquipamento" HeaderText="Tipo de equipamento" HeaderStyle-Width="500"/>
-            <asp:BoundField DataField="DataCadastro" HeaderText="Data de Cadastro" HeaderStyle-Width="200"/>
+            <asp:BoundField DataField="DataCadastro" HeaderText="Data de Cadastro" HeaderStyle-Width="200" DataFormatString="{0:d}"/>
         </Columns>
     </asp:GridView>
     <input id="HiddenAcao" type="hidden" runat="server" />

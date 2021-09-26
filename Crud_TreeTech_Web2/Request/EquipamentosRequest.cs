@@ -33,6 +33,7 @@ namespace Crud_TreeTech_Web2.Request
                         msgErro = "Não foi possível obter o tipo de equipamento : " + response.StatusCode;
                     }
                 }
+                client.Dispose();
             }
             return equipamentoModel;
         }
@@ -40,7 +41,7 @@ namespace Crud_TreeTech_Web2.Request
         public async Task<EquipamentosModel> ListarUmEquipamento(int idEquipamento)
         {
             EquipamentosModel equipamentoModel = new EquipamentosModel();
-            string URI = urlApi + string.Format("v1/Equipamento/ListarUm?idEquipamento={0}", idEquipamento);
+            string URI = urlApi + string.Format("v1/Equipamentos/ListarUm?idEquipamento={0}", idEquipamento);
             string msgErro = string.Empty;
             using (var client = new HttpClient())
             {
@@ -56,6 +57,7 @@ namespace Crud_TreeTech_Web2.Request
                         msgErro = "Não foi possível obter o equipamento : " + response.StatusCode;
                     }
                 }
+                client.Dispose();
             }
             return equipamentoModel;
         }
@@ -71,6 +73,8 @@ namespace Crud_TreeTech_Web2.Request
                 var serializedEquipamento = JsonConvert.SerializeObject(equipamento);
                 var content = new StringContent(serializedEquipamento, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync(URI, content);
+
+                client.Dispose();
             }
             return retorno;
         }
@@ -86,6 +90,8 @@ namespace Crud_TreeTech_Web2.Request
                 var serializedEquipamento = JsonConvert.SerializeObject(equipamento);
                 var content = new StringContent(serializedEquipamento, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync(URI, content);
+
+                client.Dispose();
             }
             return retorno;
         }
@@ -101,6 +107,8 @@ namespace Crud_TreeTech_Web2.Request
                 var serializedEquipamento = JsonConvert.SerializeObject(equipamento);
                 var content = new StringContent(serializedEquipamento, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync(URI, content);
+
+                client.Dispose();
             }
 
             return retorno;

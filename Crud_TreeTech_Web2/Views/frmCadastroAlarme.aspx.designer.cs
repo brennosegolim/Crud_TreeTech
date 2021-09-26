@@ -7,11 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Crud_TreeTech_Web2
+namespace Crud_TreeTech_Web2.Views
 {
 
 
-    public partial class _Default
+    public partial class frmCadastroAlarme
     {
 
         /// <summary>
@@ -42,39 +42,57 @@ namespace Crud_TreeTech_Web2
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAlerta;
 
         /// <summary>
-        /// Controle txtPesquisa.
+        /// Controle txtNomeAlarme.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPesquisa;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNomeAlarme;
 
         /// <summary>
-        /// Controle btnPesquisar.
+        /// Controle cbClassificacaoAlarme.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisar;
+        protected global::System.Web.UI.WebControls.DropDownList cbClassificacaoAlarme;
 
         /// <summary>
-        /// Controle btnRanking.
+        /// Controle cbEquipamento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRanking;
+        protected global::System.Web.UI.WebControls.DropDownList cbEquipamento;
 
         /// <summary>
-        /// Controle grdAlarmes.
+        /// Controle btnConfirmar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdAlarmes;
+        protected global::System.Web.UI.WebControls.Button btnConfirmar;
+
+        /// <summary>
+        /// Controle grdAlarme.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdAlarme;
+
+        /// <summary>
+        /// Controle HiddenAcao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden HiddenAcao;
     }
 }

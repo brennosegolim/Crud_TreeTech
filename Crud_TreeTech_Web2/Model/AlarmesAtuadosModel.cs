@@ -11,5 +11,7 @@ namespace Crud_TreeTech_Web2.Model
         public DateTime DataEntrada { get; set; }
         public DateTime DataSaida { get; set; }
         public int IdAlarme { get; set; }
+        public int Quantidade { get; set; }
+        public string NomeAlarme { get; set; }
     }
 }

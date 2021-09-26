@@ -52,7 +52,7 @@ namespace Crud_TreeTech_API.Builder
         }
 
         /// <summary>
-        /// Listar todos os registro da tabela de classificação de alarme
+        /// Listar todos os registro da tabela de alarme
         /// </summary>
         /// <returns></returns>
         public List<AlarmesDTO> ListaTodos()
@@ -61,7 +61,27 @@ namespace Crud_TreeTech_API.Builder
         }
 
         /// <summary>
-        /// Listar um registro da tabela classificação de alarme
+        /// Lista todos os registros da tabela de alarmes de forma ordenada
+        /// </summary>
+        /// <param name="coluna">coluna a ser ordenada</param>
+        /// <returns>Lista ordernada de alarmes</returns>
+        public List<AlarmesDTO> ListaTodos(string coluna)
+        {
+            return alarmeDAO.ListarTodos(coluna);
+        }
+
+        /// <summary>
+        /// Lista todos os registros da tabela de alarmes de forma ordenada
+        /// </summary>
+        /// <param name="coluna">coluna a ser ordenada</param>
+        /// <returns>Lista ordernada de alarmes</returns>
+        public List<AlarmesDTO> ListaTodos(string coluna,string filtro)
+        {
+            return alarmeDAO.ListarTodos(coluna,filtro);
+        }
+
+        /// <summary>
+        /// Listar um registro da tabela de alarme
         /// </summary>
         /// <returns></returns>
         public AlarmesDTO ListaUm()
@@ -79,7 +99,7 @@ namespace Crud_TreeTech_API.Builder
         }
 
         /// <summary>
-        /// Atualizar a classificação de alarme já existente
+        /// Atualizar um alarme já existente
         /// </summary>
         /// <returns></returns>
         public bool AtualizarAlarme()
@@ -88,7 +108,7 @@ namespace Crud_TreeTech_API.Builder
         }
 
         /// <summary>
-        /// Deletar um registro da tabela de classificação de alarme
+        /// Deletar um registro da tabela de alarme
         /// </summary>
         /// <returns></returns>
         public bool DeletarAlarme()

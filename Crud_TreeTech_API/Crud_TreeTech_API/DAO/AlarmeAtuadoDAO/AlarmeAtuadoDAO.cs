@@ -217,5 +217,52 @@ namespace Crud_TreeTech_API.DAO.AlarmeAtuadoDAO
             return aux;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<AlarmesAtuadosDTO> rankingAlarmes()
+        {
+            List<AlarmesAtuadosDTO> alarmesAtuados = new List<AlarmesAtuadosDTO>();
+
+            SqlConnection conn = new ConnectSQLServer().GetConnection();
+
+            string sql = @"SELECT TOP 3 COUNT(ID_Alarme) as Qtd,
+                                  ID_Alarme as Id_Alarme 
+                           FROM Alarmes_Atuados 
+                           GROUP BY ID_Alarme
+                           ORDER BY COUNT(ID_Alarme) DESC";
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    conn.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        AlarmesAtuadosDTO alarmesAtuadosDTO = new AlarmesAtuadosDTO()
+                        {
+                            IdAlarme = Int32.Parse(reader["ID_Alarme"].ToString()),
+                            Quantidade = Int32.Parse(reader["Qtd"].ToString())
+                        };
+
+                        alarmesAtuados.Add(alarmesAtuadosDTO);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return alarmesAtuados;
+        }
+
     }
 }

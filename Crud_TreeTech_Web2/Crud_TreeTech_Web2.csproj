@@ -170,6 +170,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -193,6 +194,8 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\frmCadastroAlarme.aspx" />
+    <Content Include="Views\frmCadastroClassificacaoAlarme.aspx" />
     <Content Include="Views\frmCadastroEquipamento.aspx" />
     <Content Include="Views\frmCadastroTipoEquipamento.aspx" />
     <Content Include="Web.config" />
@@ -230,13 +233,13 @@
     <Compile Include="Model\AlarmesModel.cs" />
     <Compile Include="Model\ClassificacaoAlarmesModel.cs" />
     <Compile Include="Model\EquipamentosModel.cs" />
-    <Compile Include="Model\InternalModel\EquipamentoDataSource.cs" />
     <Compile Include="Model\TipoEquipamentoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\AlarmesAtuadosRequest.cs" />
     <Compile Include="Request\AlarmesRequest.cs" />
     <Compile Include="Request\Base.cs" />
     <Compile Include="Request\ClassificacaoAlarmesRequest.cs" />
+    <Compile Include="Request\EnviarEmail.cs" />
     <Compile Include="Request\EquipamentosRequest.cs" />
     <Compile Include="Request\TipoEquipamentoRequest.cs" />
     <Compile Include="Site.Master.cs">
@@ -259,6 +262,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroAlarme.aspx.cs">
+      <DependentUpon>frmCadastroAlarme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastroAlarme.aspx.designer.cs">
+      <DependentUpon>frmCadastroAlarme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroClassificacaoAlarme.aspx.cs">
+      <DependentUpon>frmCadastroClassificacaoAlarme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastroClassificacaoAlarme.aspx.designer.cs">
+      <DependentUpon>frmCadastroClassificacaoAlarme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmCadastroEquipamento.aspx.cs">
       <DependentUpon>frmCadastroEquipamento.aspx</DependentUpon>

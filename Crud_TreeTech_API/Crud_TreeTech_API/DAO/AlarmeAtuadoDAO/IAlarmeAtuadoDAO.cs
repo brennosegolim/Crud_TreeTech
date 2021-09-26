@@ -13,6 +13,7 @@ namespace Crud_TreeTech_API.DAO.AlarmeAtuadoDAO
         bool Atualizar(AlarmesAtuados alarmesAtuados);
         bool Deletar(AlarmesAtuados alarmesAtuados);
         List<AlarmesAtuadosDTO> ListarTodos();
+        List<AlarmesAtuadosDTO> rankingAlarmes();
         AlarmesAtuadosDTO ListarUm(AlarmesAtuados alarmesAtuados);
     }
 }

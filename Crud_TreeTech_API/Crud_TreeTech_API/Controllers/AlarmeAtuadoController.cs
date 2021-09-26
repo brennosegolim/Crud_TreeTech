@@ -46,5 +46,12 @@ namespace Crud_TreeTech_API.Controllers
         {
             return Ok(new AlarmeAtuadoFacade().DeletarAlarmeAtuado(parametros.IdAlarmeAtuado));
         }
+
+        [HttpGet]
+        [Route("RankingAlarmes")]
+        public IActionResult RankingAlarmes()
+        {
+            return Ok(new AlarmeAtuadoFacade().RankingAlarmes());
+        }
     }
 }
